@@ -1,115 +1,571 @@
-if _G.a then return end
-_G.a = true
+game:IsLoaded()
 
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local UserInputService = game:GetService("UserInputService")
-local StarterGui = game:GetService("StarterGui")
-local CoreGui = game:GetService("CoreGui")
-local LP = Players.LocalPlayer
+local _call5 = Instance.new('ScreenGui')
 
-local function Notify(Text, Duration)
-    StarterGui:SetCore("SendNotification", {
-        Title = "Sheriff Utilities",
-        Text = Text,
-        Duration = Duration
-    })
-end
+Instance.new('ModuleScript')
 
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "SheriffUtilities"
-ScreenGui.Parent = CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local _call9 = Instance.new('TextButton')
+local _call11 = Instance.new('UIPadding')
+local _call13 = Instance.new('UICorner')
+local _call15 = Instance.new('UITextSizeConstraint')
+local _call17 = Instance.new('Frame')
+local _call19 = Instance.new('UICorner')
+local _call21 = Instance.new('Frame')
+local _call23 = Instance.new('UICorner')
 
-local function CreateButton(Name, Image, Position)
-    local Btn = Instance.new("ImageButton")
-    Btn.Name = Name
-    Btn.Parent = ScreenGui
-    Btn.BorderSizePixel = 0
-    Btn.BackgroundTransparency = 0.2
-    Btn.BackgroundColor3 = Color3.new(0, 0, 0)
-    Btn.Image = Image
-    Btn.Size = UDim2.new(0, 80, 0, 80)
-    Btn.BorderColor3 = Color3.new(0, 0, 0)
-    Btn.Position = Position
+Instance.new('LocalScript')
+Instance.new('ModuleScript')
+Instance.new('ModuleScript')
+Instance.new('ModuleScript')
+Instance.new('LocalScript')
+Instance.new('LocalScript')
+Instance.new('LocalScript')
+Instance.new('ModuleScript')
+Instance.new('ModuleScript')
+Instance.new('ModuleScript')
+Instance.new('ModuleScript')
+Instance.new('ModuleScript')
 
-    local Corner = Instance.new("UICorner")
-    Corner.CornerRadius = UDim.new(0, 100)
-    Corner.Parent = Btn
+local _call49 = Instance.new('TextButton')
 
-    local Stroke = Instance.new("UIStroke")
-    Stroke.Thickness = 2
-    Stroke.Color = Color3.fromRGB(2, 154, 255)
-    Stroke.Parent = Btn
+Instance.new('LocalScript')
+Instance.new('LocalScript')
+Instance.new('LocalScript')
 
-    return Btn, Stroke
-end
+local _call57 = Instance.new('UICorner')
+local _call59 = Instance.new('UIPadding')
+local _call61 = Instance.new('Frame')
+local _call63 = Instance.new('UICorner')
+local _call65 = Instance.new('UIGradient')
+local _call67 = Instance.new('UIStroke')
+local _call69 = Instance.new('UIGradient')
+local _call71 = Instance.new('ScrollingFrame')
+local _call73 = Instance.new('UIListLayout')
+local _call75 = Instance.new('TextButton')
+local _call77 = Instance.new('UIPadding')
+local _call79 = Instance.new('UICorner')
+local _call81 = Instance.new('UIPadding')
+local _call83 = Instance.new('StringValue')
+local _call85 = Instance.new('TextButton')
+local _call87 = Instance.new('UICorner')
+local _call89 = Instance.new('Frame')
+local _call91 = Instance.new('UIListLayout')
+local _call93 = Instance.new('UIPadding')
+local _call95 = Instance.new('Frame')
+local _call97 = Instance.new('UICorner')
+local _call99 = Instance.new('TextLabel')
+local _call101 = Instance.new('Frame')
+local _call103 = Instance.new('TextLabel')
+local _call105 = Instance.new('UIListLayout')
+local _call107 = Instance.new('UIPadding')
+local _call109 = Instance.new('Frame')
+local _call111 = Instance.new('UIPadding')
+local _call113 = Instance.new('Frame')
+local _call115 = Instance.new('UICorner')
+local _call117 = Instance.new('TextButton')
+local _call119 = Instance.new('TextLabel')
+local _call121 = Instance.new('UIPadding')
+local _call123 = Instance.new('StringValue')
+local _call125 = Instance.new('UICorner')
+local _call127 = Instance.new('UIPadding')
+local _call129 = Instance.new('TextLabel')
+local _call131 = Instance.new('StringValue')
+local _call133 = Instance.new('UISizeConstraint')
+local _call135 = Instance.new('UICorner')
+local _call137 = Instance.new('StringValue')
+local _call139 = Instance.new('TextButton')
 
-local function CenterPosition(YOffset)
-    return UDim2.new(0.5, -40, 0, YOffset)
-end
+Instance.new('LocalScript')
+Instance.new('LocalScript')
 
-local ShootBtn, ShootStroke = CreateButton("ShootMurder", "rbxassetid://80542356257974", CenterPosition(100))
-local ESPBtn, ESPStroke = CreateButton("ESP", "rbxassetid://97344643216039", CenterPosition(250))
+local _call145 = Instance.new('UIPadding')
+local _call147 = Instance.new('UICorner')
+local _call149 = Instance.new('UIStroke')
+local _call151 = Instance.new('TextLabel')
 
-local function MakeDraggable(Button)
-    local Dragging, DragStart, StartPos
-    Button.InputBegan:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
-            Dragging = true
-            DragStart = Input.Position
-            StartPos = Button.Position
-        end
-    end)
-    Button.InputEnded:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
-            Dragging = false
-        end
-    end)
-    UserInputService.InputChanged:Connect(function(Input)
-        if Dragging and (Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch) then
-            local Delta = Input.Position - DragStart
-            Button.Position = UDim2.new(StartPos.X.Scale, StartPos.X.Offset + Delta.X, StartPos.Y.Scale, StartPos.Y.Offset + Delta.Y)
-        end
-    end)
-end
+Instance.new('UIScale')
+Instance.new('Frame')
+Instance.new('UICorner')
+Instance.new('UIScale')
+Instance.new('Frame')
+Instance.new('TextLabel')
+Instance.new('UIListLayout')
+Instance.new('UIPadding')
+Instance.new('TextButton')
+Instance.new('UIPadding')
+Instance.new('UICorner')
+Instance.new('Frame')
+Instance.new('UICorner')
+Instance.new('UIStroke')
+Instance.new('UIGradient')
+Instance.new('UIGradient')
+Instance.new('UIScale')
+Instance.new('TextLabel')
+Instance.new('TextBox')
+Instance.new('UICorner')
+Instance.new('UIPadding')
+Instance.new('TextLabel')
+Instance.new('TextButton')
+Instance.new('LocalScript')
+Instance.new('UICorner')
+Instance.new('UIPadding')
+Instance.new('UIStroke')
+Instance.new('TextButton')
+Instance.new('LocalScript')
+Instance.new('UICorner')
+Instance.new('UIPadding')
+Instance.new('UIStroke')
+Instance.new('StringValue')
+Instance.new('Frame')
+Instance.new('UICorner')
+Instance.new('UIStroke')
+Instance.new('UIGradient')
+Instance.new('LocalScript')
+Instance.new('TextLabel')
+Instance.new('TextLabel')
+Instance.new('TextLabel')
+Instance.new('CanvasGroup')
+Instance.new('UICorner')
+Instance.new('ImageLabel')
+Instance.new('TextButton')
+Instance.new('TextLabel')
+Instance.new('TextButton')
+Instance.new('LocalScript')
+Instance.new('Frame')
+Instance.new('UICorner')
+Instance.new('StringValue')
+Instance.new('TextLabel')
+Instance.new('UICorner')
+Instance.new('BindableEvent')
+Instance.new('StringValue')
+Instance.new('UIGradient')
+Instance.new('CanvasGroup')
+Instance.new('ScrollingFrame')
+Instance.new('TextLabel')
+Instance.new('TextLabel')
+Instance.new('UICorner')
+Instance.new('CanvasGroup')
+Instance.new('LocalScript')
+Instance.new('UICorner')
+Instance.new('ScrollingFrame')
+Instance.new('UIListLayout')
+Instance.new('UIPadding')
+Instance.new('UIPadding')
+Instance.new('UIStroke')
+Instance.new('UIGradient')
+Instance.new('TextButton')
+Instance.new('LocalScript')
+Instance.new('UICorner')
+Instance.new('UIPadding')
+Instance.new('UIStroke')
+Instance.new('StringValue')
+Instance.new('StringValue')
+Instance.new('StringValue')
+Instance.new('UIScale')
+Instance.new('Frame')
+Instance.new('StringValue')
+Instance.new('Frame')
+Instance.new('StringValue')
+Instance.new('Frame')
+Instance.new('CanvasGroup')
+Instance.new('Frame')
+Instance.new('ImageLabel')
+Instance.new('LocalScript')
+Instance.new('TextButton')
+Instance.new('TextLabel')
+Instance.new('UICorner')
+Instance.new('Frame')
+Instance.new('TextLabel')
+Instance.new('UIListLayout')
+Instance.new('Frame')
+Instance.new('Frame')
+Instance.new('UICorner')
+Instance.new('TextButton')
+Instance.new('UICorner')
+Instance.new('ImageLabel')
+Instance.new('UIPadding')
+Instance.new('UICorner')
+Instance.new('StringValue')
+Instance.new('UIPadding')
+Instance.new('Folder')
+Instance.new('Frame')
+Instance.new('UICorner')
+Instance.new('UIStroke')
+Instance.new('UIGradient')
+Instance.new('ImageLabel')
+Instance.new('TextLabel')
+Instance.new('UITextSizeConstraint')
+Instance.new('ImageButton')
+Instance.new('UICorner')
+Instance.new('UIStroke')
+Instance.new('UIScale')
+Instance.new('StringValue')
+Instance.new('Frame')
+Instance.new('UICorner')
+Instance.new('UIGradient')
+Instance.new('UIPadding')
+Instance.new('UIStroke')
+Instance.new('UIGradient')
+Instance.new('TextLabel')
+Instance.new('UIListLayout')
+Instance.new('TextLabel')
+Instance.new('UITextSizeConstraint')
+Instance.new('Frame')
+Instance.new('UIListLayout')
+Instance.new('TextButton')
+Instance.new('UIPadding')
+Instance.new('UICorner')
+Instance.new('UIStroke')
+Instance.new('UIGradient')
+Instance.new('StringValue')
+Instance.new('BindableEvent')
+Instance.new('UIScale')
+Instance.new('StringValue')
+Instance.new('Frame')
+Instance.new('Frame')
+Instance.new('Frame')
+Instance.new('UIListLayout')
+Instance.new('TextButton')
+Instance.new('LocalScript')
+Instance.new('UICorner')
+Instance.new('UIPadding')
+Instance.new('BindableEvent')
+Instance.new('StringValue')
+Instance.new('TextButton')
+Instance.new('LocalScript')
+Instance.new('UICorner')
+Instance.new('UIPadding')
+Instance.new('BindableEvent')
+Instance.new('StringValue')
+Instance.new('TextButton')
+Instance.new('LocalScript')
+Instance.new('UICorner')
+Instance.new('UIPadding')
+Instance.new('UIAspectRatioConstraint')
+Instance.new('StringValue')
+Instance.new('UIListLayout')
+Instance.new('TextLabel')
+Instance.new('UIStroke')
+Instance.new('UIScale')
+Instance.new('Frame')
+Instance.new('Frame')
+Instance.new('Frame')
+Instance.new('UIListLayout')
+Instance.new('TextButton')
+Instance.new('UICorner')
+Instance.new('UIPadding')
+Instance.new('UITextSizeConstraint')
+Instance.new('TextBox')
+Instance.new('UICorner')
+Instance.new('LocalScript')
 
-MakeDraggable(ShootBtn)
-MakeDraggable(ESPBtn)
+_call5.DisplayOrder = 3
+_call5.IgnoreGuiInset = true
+_call5.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
+_call5.ResetOnSpawn = false
+_call5.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+_call5.Name = 'YARHM'
+_call5.Parent = game:GetService('CoreGui')
+_call9.FontFace = Font.new('rbxasset://fonts/families/GothamSSm.json', Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+_call9.Text = 'a'
+_call9.TextColor3 = Color3.fromRGB(255, 255, 255)
+_call9.TextScaled = true
+_call9.TextWrapped = true
+_call9.TextXAlignment = Enum.TextXAlignment.Left
+_call9.BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+_call9.Size = UDim2.new(1, 0, 0, 35)
+_call9.Visible = false
+_call9.Name = 'MenuButton'
+_call9.Parent = _call5
+_call11.PaddingBottom = UDim.new(0, 5)
+_call11.PaddingLeft = UDim.new(0, 16)
+_call11.PaddingRight = UDim.new(0, 16)
+_call11.PaddingTop = UDim.new(0, 5)
+_call11.Parent = _call9
+_call13.BottomLeftRadius = UDim.new(1, 0)
+_call13.BottomRightRadius = UDim.new(1, 0)
+_call13.CornerRadius = UDim.new(1, 0)
+_call13.TopLeftRadius = UDim.new(1, 0)
+_call13.TopRightRadius = UDim.new(1, 0)
+_call13.Parent = _call9
+_call15.MaxTextSize = 16
+_call15.Parent = _call9
+_call17.AnchorPoint = Vector2.new(1, 0.5)
+_call17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call17.BackgroundTransparency = 0.5
+_call17.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call17.BorderSizePixel = 0
+_call17.Position = UDim2.new(1, 0, 0.5, 0)
+_call17.Size = UDim2.new(0, 21, 0, 21)
+_call17.Name = 'ClickInd'
+_call17.Parent = _call9
+_call19.BottomLeftRadius = UDim.new(1, 0)
+_call19.BottomRightRadius = UDim.new(1, 0)
+_call19.CornerRadius = UDim.new(1, 0)
+_call19.TopLeftRadius = UDim.new(1, 0)
+_call19.TopRightRadius = UDim.new(1, 0)
+_call19.Parent = _call17
+_call21.AnchorPoint = Vector2.new(0.5, 0.5)
+_call21.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call21.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call21.BorderSizePixel = 0
+_call21.Position = UDim2.new(0.5, 0, 0.5, 0)
+_call21.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
+_call21.Parent = _call17
+_call23.BottomLeftRadius = UDim.new(1, 0)
+_call23.BottomRightRadius = UDim.new(1, 0)
+_call23.CornerRadius = UDim.new(1, 0)
+_call23.TopLeftRadius = UDim.new(1, 0)
+_call23.TopRightRadius = UDim.new(1, 0)
+_call23.Parent = _call21
+_call49.FontFace = Font.new('rbxasset://fonts/families/GothamSSm.json', Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+_call49.Text = 'Triple-click this region to open YARHM.'
+_call49.TextColor3 = Color3.fromRGB(255, 255, 255)
+_call49.TextScaled = true
+_call49.TextSize = 14
+_call49.TextTransparency = 1
+_call49.TextWrapped = true
+_call49.AnchorPoint = Vector2.new(0.5, 0.5)
+_call49.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call49.BackgroundTransparency = 1
+_call49.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call49.BorderSizePixel = 0
+_call49.Position = UDim2.new(0.499372631, 0, 0.06341701, 0)
+_call49.Selectable = false
+_call49.Size = UDim2.new(0, 493, 0, 50)
+_call49.Visible = false
+_call49.Name = 'Open'
+_call49.Parent = _call5
+_call57.Parent = _call49
+_call59.PaddingBottom = UDim.new(0, 10)
+_call59.PaddingLeft = UDim.new(0, 20)
+_call59.PaddingRight = UDim.new(0, 20)
+_call59.PaddingTop = UDim.new(0, 10)
+_call59.Parent = _call49
+_call61.AnchorPoint = Vector2.new(0.5, 0)
+_call61.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call61.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call61.BorderSizePixel = 0
+_call61.Size = UDim2.new(0, 108, 0, 239)
+_call61.Visible = false
+_call61.Name = 'DropdownFrameSample'
+_call61.Parent = _call5
+_call63.Parent = _call61
 
-Notify("Buttons are draggable!", 10)
+local _call623 = ColorSequence.new({
+    [1] = ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+    [2] = ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636)),
+})
 
-local ESPEnabled = false
-local Highlights = {}
+_call65.Color = _call623
+_call65.Rotation = 68
+_call65.Parent = _call61
+_call67.Color = Color3.fromRGB(255, 255, 255)
+_call67.Thickness = 2
+_call67.Parent = _call61
 
-local function FindMurderer()
-    for _, Pl in ipairs(Players:GetPlayers()) do
-        if Pl ~= LP then
-            if Pl.Backpack:FindFirstChild("Knife") or (Pl.Character and Pl.Character:FindFirstChild("Knife")) then
-                return Pl
-            end
-        end
-    end
-    return nil
-end
+local _call639 = ColorSequence.new({
+    [1] = ColorSequenceKeypoint.new(0, Color3.fromRGB(111.00000098347664, 111.00000098347664, 111.00000098347664)),
+    [2] = ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(114.23875719308853, 114.23875719308853, 114.23875719308853)),
+    [3] = ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)),
+})
 
-local function FindSheriff()
-    for _, Pl in ipairs(Players:GetPlayers()) do
-        if Pl.Backpack:FindFirstChild("Gun") or (Pl.Character and Pl.Character:FindFirstChild("Gun")) then
-            return Pl
-        end
-    end
-    return nil
-end
-
-local function UpdateESP()
-    local Sheriff = FindSheriff()
-    local Murderer = FindMurderer()
-
-    for _, Pl in ipairs(Players:GetPlayers()) do
-        local Char = Pl.Character
-        local H = Highlights[Pl]
-
+_call69.Color = _call639
+_call69.Rotation = -107
+_call69.Parent = _call67
+_call71.AutomaticCanvasSize = Enum.AutomaticSize.XY
+_call71.CanvasSize = UDim2.new(0, 0, 0, 0)
+_call71.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
+_call71.ScrollBarThickness = 0
+_call71.Active = true
+_call71.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call71.BackgroundTransparency = 1
+_call71.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call71.BorderSizePixel = 0
+_call71.Size = UDim2.new(1, 0, 1, 0)
+_call71.Parent = _call61
+_call73.Padding = UDim.new(0, 5)
+_call73.SortOrder = Enum.SortOrder.LayoutOrder
+_call73.Parent = _call71
+_call75.FontFace = Font.new('rbxassetid://11702779517', Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+_call75.Text = 'This can fit a lot of text, probably.'
+_call75.TextColor3 = Color3.fromRGB(255, 255, 255)
+_call75.TextScaled = true
+_call75.TextSize = 14
+_call75.TextWrapped = true
+_call75.BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+_call75.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call75.BorderSizePixel = 0
+_call75.Size = UDim2.new(1, 0, 0, 35)
+_call75.Visible = false
+_call75.Name = 'Sample'
+_call75.Parent = _call71
+_call77.PaddingBottom = UDim.new(0, 7)
+_call77.PaddingLeft = UDim.new(0, 7)
+_call77.PaddingRight = UDim.new(0, 7)
+_call77.PaddingTop = UDim.new(0, 7)
+_call77.Parent = _call75
+_call79.Parent = _call75
+_call81.PaddingBottom = UDim.new(0, 7)
+_call81.PaddingLeft = UDim.new(0, 7)
+_call81.PaddingRight = UDim.new(0, 7)
+_call81.PaddingTop = UDim.new(0, 7)
+_call81.Parent = _call61
+_call83.Value = 'backgroundColorCSQ'
+_call83.Name = 'themedColor'
+_call83.Parent = _call61
+_call85.FontFace = Font.new('rbxasset://fonts/families/GothamSSm.json', Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+_call85.Text = 'Placeholder'
+_call85.TextColor3 = Color3.fromRGB(255, 255, 255)
+_call85.TextSize = 14
+_call85.TextWrapped = true
+_call85.AnchorPoint = Vector2.new(0.5, 0.5)
+_call85.BackgroundColor3 = Color3.fromRGB(49.00000087916851, 49.00000087916851, 49.00000087916851)
+_call85.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call85.BorderSizePixel = 0
+_call85.Position = UDim2.new(0.0450000018, 0, 0.112000003, 0)
+_call85.Size = UDim2.new(1, 0, 0, 50)
+_call85.Visible = false
+_call85.Name = 'ListButton'
+_call85.Parent = _call5
+_call87.Parent = _call85
+_call89.AnchorPoint = Vector2.new(1, 0.5)
+_call89.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call89.BackgroundTransparency = 1
+_call89.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call89.BorderSizePixel = 0
+_call89.Position = UDim2.new(0.99000001, 0, 0.5, 0)
+_call89.Size = UDim2.new(0, 242, 1, 0)
+_call89.Name = 'Notifications'
+_call89.Parent = _call5
+_call91.Padding = UDim.new(0, 10)
+_call91.HorizontalAlignment = Enum.HorizontalAlignment.Center
+_call91.SortOrder = Enum.SortOrder.LayoutOrder
+_call91.VerticalAlignment = Enum.VerticalAlignment.Bottom
+_call91.Parent = _call89
+_call93.PaddingBottom = UDim.new(0, 10)
+_call93.PaddingLeft = UDim.new(0, 10)
+_call93.Parent = _call89
+_call95.AnchorPoint = Vector2.new(0.5, 0)
+_call95.BackgroundColor3 = Color3.fromRGB(31.000001952052116, 31.000001952052116, 31.000001952052116)
+_call95.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call95.BorderSizePixel = 0
+_call95.Position = UDim2.new(0.0450000018, 0, 0.112000003, 0)
+_call95.Visible = false
+_call95.Name = 'Placeholder'
+_call95.Parent = _call89
+_call97.Parent = _call95
+_call99.FontFace = Font.new('rbxasset://fonts/families/GothamSSm.json', Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+_call99.TextColor3 = Color3.fromRGB(255, 255, 255)
+_call99.TextScaled = true
+_call99.TextSize = 14
+_call99.TextWrapped = true
+_call99.TextXAlignment = Enum.TextXAlignment.Left
+_call99.AnchorPoint = Vector2.new(0.5, 0.5)
+_call99.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call99.BackgroundTransparency = 1
+_call99.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call99.BorderSizePixel = 0
+_call99.Position = UDim2.new(0.5, 0, 0.5, 0)
+_call99.Size = UDim2.new(0.899999976, 0, 0.800000012, 0)
+_call99.Parent = _call95
+_call101.BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+_call101.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call101.BorderSizePixel = 0
+_call101.Size = UDim2.new(1, 0, 0, 45)
+_call101.Visible = false
+_call101.Name = 'Range'
+_call101.Parent = _call5
+_call103.FontFace = Font.new('rbxassetid://11702779517', Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+_call103.Text = 'something something idk lol'
+_call103.TextColor3 = Color3.fromRGB(255, 255, 255)
+_call103.TextScaled = true
+_call103.TextSize = 58
+_call103.TextWrapped = true
+_call103.TextXAlignment = Enum.TextXAlignment.Left
+_call103.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call103.BackgroundTransparency = 1
+_call103.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call103.BorderSizePixel = 0
+_call103.Position = UDim2.new(-0.0633024424, 0, 0.685714304, 0)
+_call103.Size = UDim2.new(0, 125, 0, 25)
+_call103.Parent = _call101
+_call105.HorizontalFlex = Enum.UIFlexAlignment.Fill
+_call105.Padding = UDim.new(0, 15)
+_call105.VerticalFlex = Enum.UIFlexAlignment.SpaceAround
+_call105.FillDirection = Enum.FillDirection.Horizontal
+_call105.HorizontalAlignment = Enum.HorizontalAlignment.Center
+_call105.SortOrder = Enum.SortOrder.LayoutOrder
+_call105.VerticalAlignment = Enum.VerticalAlignment.Center
+_call105.Parent = _call101
+_call107.PaddingBottom = UDim.new(0, 6)
+_call107.PaddingLeft = UDim.new(0, 16)
+_call107.PaddingRight = UDim.new(0, 8)
+_call107.PaddingTop = UDim.new(0, 6)
+_call107.Parent = _call101
+_call109.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call109.BackgroundTransparency = 1
+_call109.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call109.BorderSizePixel = 0
+_call109.Size = UDim2.new(0.400000006, 0, 1, 0)
+_call109.Parent = _call101
+_call111.PaddingBottom = UDim.new(0, 7)
+_call111.PaddingLeft = UDim.new(0, 7)
+_call111.PaddingRight = UDim.new(0, 7)
+_call111.PaddingTop = UDim.new(0, 7)
+_call111.Parent = _call109
+_call113.AnchorPoint = Vector2.new(0.5, 0.5)
+_call113.BackgroundColor3 = Color3.fromRGB(12.000000234693289, 12.000000234693289, 12.000000234693289)
+_call113.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call113.BorderSizePixel = 0
+_call113.Position = UDim2.new(0.5, 0, 0.5, 0)
+_call113.Size = UDim2.new(1, 0, 1.20000005, 0)
+_call113.Name = 'Track'
+_call113.Parent = _call109
+_call115.BottomLeftRadius = UDim.new(1, 0)
+_call115.BottomRightRadius = UDim.new(1, 0)
+_call115.CornerRadius = UDim.new(1, 0)
+_call115.TopLeftRadius = UDim.new(1, 0)
+_call115.TopRightRadius = UDim.new(1, 0)
+_call115.Parent = _call113
+_call117.FontFace = Font.new('rbxasset://fonts/families/SourceSansPro.json', Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+_call117.Text = ''
+_call117.TextColor3 = Color3.fromRGB(0, 0, 0)
+_call117.TextSize = 14
+_call117.AnchorPoint = Vector2.new(0, 0.5)
+_call117.BackgroundColor3 = Color3.fromRGB(197.0000034570694, 0, 0)
+_call117.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call117.BorderSizePixel = 0
+_call117.Interactable = false
+_call117.Position = UDim2.new(1.32920917e-7, 0, 0.5, 0)
+_call117.Size = UDim2.new(0.0599999987, 0, 1, 0)
+_call117.Name = 'Ball'
+_call117.Parent = _call113
+_call119.FontFace = Font.new('rbxasset://fonts/families/GothamSSm.json', Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+_call119.Text = '0'
+_call119.TextColor3 = Color3.fromRGB(255, 255, 255)
+_call119.TextScaled = true
+_call119.TextSize = 14
+_call119.TextTransparency = 1
+_call119.TextWrapped = true
+_call119.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_call119.BackgroundTransparency = 1
+_call119.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_call119.BorderSizePixel = 0
+_call119.Size = UDim2.new(1, 0, 1, 0)
+_call119.Name = 'BallProgress'
+_call119.Parent = _call117
+_call121.PaddingBottom = UDim.new(0, 2)
+_call121.PaddingTop = UDim.new(0, 1)
+_call121.Parent = _call117
+_call123.Value = 'accentColor'
+_call123.Name = 'themedColor'
+_call123.Parent = _call117
+_call125.BottomLeftRadius = UDim.new(1, 0)
+_call125.BottomRightRadius = UDim.new(1, 0)
+_call125.CornerRadius = UDim.new(1, 0)
+_call125.TopLeftRadius = UDim.new(1, 0)
+_call125.TopRigh
         if Char and ESPEnabled and Pl ~= LP then
             if not H or H.Parent ~= Char then
                 if H then H:Destroy() end
