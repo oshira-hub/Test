@@ -1,0 +1,190 @@
+local _call3 = game:GetService('ReplicatedStorage')
+local _call7 = game:GetService('CoreGui')
+
+game:GetService('TweenService')
+
+local _call11 = game:GetService('SoundService')
+local _call17 = _call3:WaitForChild('Assets'):WaitForChild('Seeds')
+local _LocalPlayer18 = game:GetService('Players').LocalPlayer
+local _ = workspace.CurrentCamera
+
+require(_call3:WaitForChild('SharedModules'):WaitForChild('SeedData'))
+
+local _call30 = _call3:WaitForChild('SharedModules'):WaitForChild('SeedData'):WaitForChild('SeedImages')
+
+_call3:WaitForChild('Assets'):WaitForChild('Dirt')
+_call11:WaitForChild('SFX'):WaitForChild('PlantSFX')
+workspace:FindFirstChild('Temporary')
+_call7:FindFirstChild('SeedSpawnerGui'):Destroy()
+
+local _call46 = Instance.new('ScreenGui')
+
+_call46.Name = 'SeedSpawnerGui'
+_call46.ResetOnSpawn = false
+_call46.Parent = _call7
+
+local _call48 = Instance.new('Frame')
+
+_call48.Size = UDim2.new(0, 200, 0, 280)
+_call48.Position = UDim2.new(0.5, -100, 0.5, -140)
+_call48.BackgroundColor3 = Color3.fromRGB(20, 20, 22)
+_call48.BorderSizePixel = 0
+_call48.Active = true
+_call48.Draggable = true
+_call48.Parent = _call46
+
+local _call56 = Instance.new('UICorner')
+
+_call56.CornerRadius = UDim.new(0, 10)
+_call56.Parent = _call48
+
+local _call60 = Instance.new('TextLabel')
+
+_call60.Size = UDim2.new(1, 0, 0, 30)
+_call60.BackgroundTransparency = 1
+_call60.Text = 'Seed Spawner'
+_call60.TextColor3 = Color3.fromRGB(240, 240, 245)
+_call60.TextSize = 12
+_call60.Font = Enum.Font.GothamBold
+_call60.Parent = _call48
+
+local _call68 = Instance.new('TextBox')
+
+_call68.Size = UDim2.new(1, -16, 0, 24)
+_call68.Position = UDim2.new(0, 8, 0, 32)
+_call68.BackgroundColor3 = Color3.fromRGB(32, 32, 36)
+_call68.BorderSizePixel = 0
+_call68.Text = ''
+_call68.PlaceholderText = 'Search seeds...'
+_call68.TextColor3 = Color3.fromRGB(255, 255, 255)
+_call68.PlaceholderColor3 = Color3.fromRGB(120, 120, 130)
+_call68.TextSize = 11
+_call68.Font = Enum.Font.Gotham
+_call68.TextXAlignment = Enum.TextXAlignment.Left
+_call68.ClearTextOnFocus = false
+_call68.Parent = _call48
+
+local _call84 = Instance.new('UICorner')
+
+_call84.CornerRadius = UDim.new(0, 5)
+_call84.Parent = _call68
+
+local _call88 = Instance.new('UIPadding')
+
+_call88.PaddingLeft = UDim.new(0, 6)
+_call88.Parent = _call68
+
+local _call92 = Instance.new('ScrollingFrame')
+
+_call92.Size = UDim2.new(1, -16, 1, -106)
+_call92.Position = UDim2.new(0, 8, 0, 62)
+_call92.BackgroundTransparency = 1
+_call92.BorderSizePixel = 0
+_call92.CanvasSize = UDim2.new(0, 0, 0, 0)
+_call92.ScrollBarThickness = 2
+_call92.ScrollBarImageColor3 = Color3.fromRGB(50, 50, 55)
+_call92.Parent = _call48
+
+local _call102 = Instance.new('UIListLayout')
+
+_call102.Parent = _call92
+_call102.SortOrder = Enum.SortOrder.LayoutOrder
+_call102.Padding = UDim.new(0, 4)
+
+local _call108 = Instance.new('TextButton')
+
+_call108.Size = UDim2.new(1, -16, 0, 30)
+_call108.Position = UDim2.new(0, 8, 1, -38)
+_call108.BackgroundColor3 = Color3.fromRGB(46, 204, 113)
+_call108.Text = 'Select a Seed'
+_call108.TextColor3 = Color3.fromRGB(255, 255, 255)
+_call108.TextSize = 11
+_call108.Font = Enum.Font.GothamBold
+_call108.Parent = _call48
+
+local _call120 = Instance.new('UICorner')
+
+_call120.CornerRadius = UDim.new(0, 5)
+_call120.Parent = _call108
+
+_call102:GetPropertyChangedSignal('AbsoluteContentSize'):Connect(function()
+    _call92.CanvasSize = UDim2.new(0, 0, 0, _call102.AbsoluteContentSize.Y)
+end)
+
+for _134, _134_2 in ipairs(_call17:GetChildren())do
+    _134_2:IsA('BasePart')
+
+    local _call139 = _call30:FindFirstChild(_134_2.Name)
+
+    _call139:IsA('StringValue')
+
+    local _call144 = Instance.new('Frame')
+
+    _call144.Size = UDim2.new(1, 0, 0, 32)
+    _call144.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+    _call144.BorderSizePixel = 0
+    _call144.Parent = _call92
+
+    _call144:SetAttribute('SeedToolTip', _134_2.Name)
+
+    local _call153 = Instance.new('UICorner')
+
+    _call153.CornerRadius = UDim.new(0, 4)
+    _call153.Parent = _call144
+
+    local _call157 = Instance.new('ImageLabel')
+
+    _call157.Size = UDim2.new(0, 22, 0, 22)
+    _call157.Position = UDim2.new(0, 5, 0, 5)
+    _call157.BackgroundTransparency = 1
+    _call157.Image = _call139.Value
+    _call157.Parent = _call144
+
+    local _call163 = Instance.new('TextLabel')
+
+    _call163.Size = UDim2.new(1, -38, 1, 0)
+    _call163.Position = UDim2.new(0, 32, 0, 0)
+    _call163.BackgroundTransparency = 1
+    _call163.Text = _134_2.Name
+    _call163.TextColor3 = Color3.fromRGB(230, 230, 235)
+    _call163.TextSize = 11
+    _call163.Font = Enum.Font.GothamBold
+    _call163.TextXAlignment = Enum.TextXAlignment.Left
+    _call163.Parent = _call144
+
+    local _call176 = Instance.new('TextButton')
+
+    _call176.Size = UDim2.new(1, 0, 1, 0)
+    _call176.BackgroundTransparency = 1
+    _call176.Text = ''
+    _call176.Parent = _call144
+
+    _call176.MouseButton1Click:Connect(function()
+        local _Name183 = _134_2.Name
+
+        _call108.Text = 'Spawn ' .. _Name183
+        _call144.BackgroundColor3 = Color3.fromRGB(34, 66, 124)
+    end)
+    _134_2.Name:lower()
+end
+
+_call68:GetPropertyChangedSignal('Text'):Connect(function()
+    _call189:find(_call68.Text:lower(), 1, true)
+
+    _call144.Visible = true
+end)
+_call108.MouseButton1Click:Connect(function()
+    local _call208 = _LocalPlayer18:FindFirstChild('Backpack'):FindFirstChild(_Name183 .. ' Seed')
+
+    _call208:IsA('Tool')
+    _call208:SetAttribute('Count', (_call208:GetAttribute('Count') + 1))
+
+    _call108.Text = 'Added!'
+    _call108.BackgroundColor3 = Color3.fromRGB(39, 174, 96)
+
+    task.wait(0.25)
+
+    _call108.Text = _call108.Text
+    _call108.BackgroundColor3 = Color3.fromRGB(46, 204, 113)
+end)
+game:GetService('UserInputService').InputBegan:Connect(function(_224, _224_2) end)
